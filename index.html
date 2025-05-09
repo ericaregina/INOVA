@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INOVA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=material+icons" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Playfair Display', serif;
+      color: #333;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in-up {
+      animation: fadeInUp 1s ease-out forwards;
+    }
+  </style>
+  <link rel="icon" href="logo.png" type="image/png" />
+</head>
+
+<body class="text-gray-800">
+
+  <div class="relative z-10">
+    <header class="fixed w-full shadow-md rounded-b-2xl z-50" style="background-color: #e0e0e0;">
+      <div class="flex justify-between items-center px-6 py-2">
+
+
+        <div class="flex items-center space-x-3 -ml-6">
+          <img src="logo.png" alt="Logo Bellitia Pelle" class="h-14 w-14 object-contain" />
+          <h1 class="text-2xl font-bold text-black" id="site-name">INOVA</h1>
+        </div>
+
+
+        <nav class="space-x-6 hidden md:flex">
+          <a href="#sobre" class="text-black hover:text-gray-700 flex items-center">Sobre</a>
+          <a href="#depoimentos" class="text-black hover:text-gray-700 flex items-center">Depoimentos</a>
+          <a href="#compra" class="text-black hover:text-gray-700 flex items-center">Comprar</a>
+        </nav>
+
+
+        <button id="menu-toggle" class="md:hidden text-black text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+
+      <div id="mobile-menu"
+        class="md:hidden bg-white absolute top-0 left-0 w-full h-screen bg-opacity-80 transform translate-x-full transition-all duration-300">
+        <div class="flex justify-end p-4">
+          <button id="close-menu" class="text-black text-2xl">✕</button>
+        </div>
+        <div class="flex flex-col items-center">
+          <a href="#sobre" class="text-black hover:text-gray-700 py-4 text-xl">Sobre</a>
+          <a href="#depoimentos" class="text-black hover:text-gray-700 py-4 text-xl">Depoimentos</a>
+          <a href="#compra" class="text-black hover:text-gray-700 py-4 text-xl">Comprar</a>
+        </div>
+      </div>
+    </header>
+
+
+    <script>
+      const hamburger = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const closeMenu = document.getElementById('close-menu');
+
+      hamburger.addEventListener('click', () => {
+        mobileMenu.classList.toggle('translate-x-full');
+        mobileMenu.classList.toggle('translate-x-0');
+      });
+
+
+      closeMenu.addEventListener('click', () => {
+        mobileMenu.classList.add('translate-x-full');
+        mobileMenu.classList.remove('translate-x-0');
+      });
+    </script>
+
+    <section class="relative h-screen flex items-center justify-center text-white text-center overflow-hidden">
+      <div class="absolute inset-0 bg-[url('fundo.jpg')] bg-cover bg-no-repeat bg-center opacity-40 z-0">
+      </div>
+      <div class="relative z-10 flex flex-col items-center animate-fade-in-up mt-80">
+        <h2 class="text-4xl md:text-6xl font-bold mb-4">Descubra as Melhores Receitas Caseiras</h2>
+        <p class="mb-6 italic text-black">Receitas práticas, saborosas e que vão encantar sua família!</p>
+        <a href="#compra" class="bg-black text-white font-bold py-3 px-6 rounded-full hover:bg-black transition">Quero
+          Comprar Agora</a>
+      </div>
+    </section>
+
+
+
+
+    <section id="sobre" class="py-20 bg-white">
+      <div class="text-center px-6">
+        <h3 class="text-3xl font-bold mb-4">Sobre o Produto</h3>
+        <p class="mb-4">Nosso e-book exclusivo traz as melhores receitas testadas e aprovadas, com ingredientes simples
+          e passo a passo detalhado. Seja você iniciante ou experiente, essas receitas vão transformar sua cozinha!</p>
+      </div>
+    </section>
+
+    <section id="beneficios" class="py-20 bg-white">
+      <div class="grid md:grid-cols-3 gap-8 px-6 text-center">
+        <div class="p-6 bg-gray-100 rounded-lg shadow hover:scale-105 transition">
+          <h4 class="text-xl font-bold mb-2">Praticidade</h4>
+          <p>Receitas fáceis para o dia a dia, economizando tempo e dinheiro.</p>
+        </div>
+        <div class="p-6 bg-gray-100 rounded-lg shadow hover:scale-105 transition">
+          <h4 class="text-xl font-bold mb-2">Variedade</h4>
+          <p>Doces, salgados, lanches e pratos principais para todos os gostos.</p>
+        </div>
+        <div class="p-6 bg-gray-100 rounded-lg shadow hover:scale-105 transition">
+          <h4 class="text-xl font-bold mb-2">Garantia</h4>
+          <p>Você tem 7 dias para pedir reembolso total.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pratos" class="py-20 bg-white">
+      <div class="px-6 max-w-7xl mx-auto">
+        <h3 class="text-3xl font-bold text-center mb-10">Veja algumas receitas inclusas:</h3>
+        <div class="flex flex-nowrap gap-6 overflow-x-auto pb-4">
+
+          <div
+            class="bg-transparent rounded-lg overflow-hidden shadow hover:shadow-lg transition transform hover:scale-105 w-64 flex-shrink-0">
+            <img src="pao.jpg" alt="Brie em Croute" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h4 class="text-xl text-center mb-2">Brie em Croute</h4>
+            </div>
+          </div>
+
+          <div
+            class="bg-transparent rounded-lg overflow-hidden shadow hover:shadow-lg transition transform hover:scale-105 w-64 flex-shrink-0">
+            <img src="moqueca.jpg" alt="Moqueca de Camarão" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h4 class="text-xl text-center mb-2">Moqueca de Camarão</h4>
+            </div>
+          </div>
+
+          <div
+            class="bg-transparent rounded-lg overflow-hidden shadow hover:shadow-lg transition transform hover:scale-105 w-64 flex-shrink-0">
+            <img src="banana.jpg" alt="Moqueca de Banana" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h4 class="text-xl text-center mb-2">Moqueca de Banana da Terra</h4>
+            </div>
+          </div>
+
+          <div
+            class="bg-transparent rounded-lg overflow-hidden shadow hover:shadow-lg transition transform hover:scale-105 w-64 flex-shrink-0">
+            <img src="bolo.jpg" alt="Bolo Chocomousse" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h4 class="text-xl text-center mb-2">Bolo Chocomousse</h4>
+            </div>
+          </div>
+
+          <div
+            class="bg-transparent rounded-lg overflow-hidden shadow hover:shadow-lg transition transform hover:scale-105 w-64 flex-shrink-0">
+            <img src="salada.jpg" alt="Salada Mediterrânea" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h4 class="text-xl text-center mb-2">Saladas Variadas</h4>
+            </div>
+          </div>
+
+          <div
+            class="bg-transparent rounded-lg overflow-hidden shadow hover:shadow-lg transition transform hover:scale-105 w-64 flex-shrink-0">
+            <img src="leite.jpg" alt="Leite de Amêndoas" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h4 class="text-xl text-center mb-2">Leite de Amêndoas</h4>
+            </div>
+          </div>
+
+          <div
+            class="bg-transparent rounded-lg overflow-hidden shadow hover:shadow-lg transition transform hover:scale-105 w-64 flex-shrink-0">
+            <img src="salmao.jpg" alt="Salmão Grelhado" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h4 class="text-xl text-center mb-2">Salmão Grelhado</h4>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <section id="depoimentos" class="py-20 bg-white">
+      <div class="text-center px-6">
+        <h3 class="text-3xl font-bold mb-8">O que Nossos Clientes Dizem</h3>
+        <div class="space-y-6">
+          <blockquote class="italic">“As receitas são incríveis, simples de seguir e ficam deliciosas! Recomendo muito.”
+          </blockquote>
+          <blockquote class="italic">“Economizei tempo e dinheiro na cozinha. Vale cada centavo!”</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="compra" class="py-20 bg-white text-center">
+      <h3 class="text-3xl font-bold mb-4">Adquira Já o Seu E-book</h3>
+      <p class="mb-6">Clique no botão abaixo e comece hoje mesmo a transformar suas refeições!</p>
+      <a href="https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=SEU_PREF_ID"
+        class="bg-black text-white font-bold py-4 px-8 rounded-full hover:bg-black transition text-lg mt-8">
+        Comprar Agora
+      </a>
+
+    </section>
+
+    <footer class="py-6 text-center bg-white">
+      <p class="text-sm">&copy; 2025 Receitas Premium. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
